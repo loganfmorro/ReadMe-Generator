@@ -97,7 +97,7 @@ function markdownGen(response) {
     ${response.usage}
 
 ##Contributing:
-    ${reponse.contribution}
+    ${response.contribution}
 
 ## Test:
     ${response.test}
