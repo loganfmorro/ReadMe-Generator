@@ -1,7 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
-const { type } = require('os');
 
 const writeFileA = util.promisify(fs.writeFile);
 
@@ -121,7 +120,7 @@ For additional questions please reach out to my email at: ${response.email}.
 // This is our function to initialize the ReadMe Generator
 async function init() {
     try {
-        const response = await promptUser();
+        const response = await userPrompts();
         const readMe = markdownGen (response);
 
         await writeFileA("README.md", readMe);
