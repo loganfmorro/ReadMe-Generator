@@ -1,9 +1,11 @@
+// array of questions for user
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 
 const writeFileA = util.promisify(fs.writeFile);
 
+// function to write README file
 function userPrompts() {
     return inquirer.prompt([
         {
@@ -96,7 +98,7 @@ function markdownGen(response) {
 ## Usage:
     ${response.usage}
 
-##Contributing:
+## Contributing:
     ${response.contribution}
 
 ## Test:
