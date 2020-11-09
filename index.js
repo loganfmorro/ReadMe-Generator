@@ -109,5 +109,11 @@ function markdownGen(response) {
     For more information about the License, click the link below:
 - [License](https://opensource.org/licenses/${response.license})
 
-    `
+## Questions:
+    For questions about this ReadMe Generator, you can visit my GitHub page at the following link:
+- [GitHub Profile](https://github.com/${response.username})
+
+For additional questions please reach out to my email at: ${response.email}.
+
+`;
 }
