@@ -71,6 +71,7 @@ function userPrompts() {
     ]);
 }
 
+//These are the results of the Read Me context following the user's responses to question
 function markdownGen(response) {
     return `
 # ${response.title}
@@ -114,6 +115,19 @@ function markdownGen(response) {
 - [GitHub Profile](https://github.com/${response.username})
 
 For additional questions please reach out to my email at: ${response.email}.
-
 `;
 }
+
+// This is our function to initialize the ReadMe Generator
+async function init() {
+    try {
+        const response = await promptUser();
+        const readMe = markdownGen (response);
+
+        await writeFileA("README.md", readMe);
+        console.log("Success!");
+    } catch (err) {
+        console.log(err);
+    }
+}
+init();
