@@ -121,7 +121,7 @@ For additional questions please reach out to my email at: ${response.email}.
 async function init() {
     try {
         const response = await userPrompts();
-        const readMe = markdownGen (response);
+        const readMe = markdownGen(response);
 
         await writeFileA("README.md", readMe);
         console.log("Success!");
