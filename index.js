@@ -70,3 +70,44 @@ function userPrompts() {
         },
     ]);
 }
+
+function markdownGen(response) {
+    return `
+# ${response.title}
+
+# Table of Contents
+
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Test](#test)
+- [Credits](#credits)
+- [License](#license)
+- [Questions](#questions)
+
+## Description:
+![License](https://img.shields.io/badge/License-${response.license}-blue.svg "License Badge")
+    ${response.description}
+
+## Installation:
+    ${response.installation}
+
+## Usage:
+    ${response.usage}
+
+##Contributing:
+    ${reponse.contribution}
+
+## Test:
+    ${response.test}
+
+## Credits:
+    ${response.credit}
+
+## License:
+    For more information about the License, click the link below:
+- [License](https://opensource.org/licenses/${response.license})
+
+    `
+}
